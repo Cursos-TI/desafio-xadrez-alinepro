@@ -7,43 +7,55 @@
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-int numCasa;
-char nomePeca,nomePeca1, nomePeca2, nomePeca3, direita, cima, esquerda;
+   int numCasa, i;
+    int opcao;
+    char direcao;
 
     printf("Digite o número da peça que deseja mover!\n");
-    printf(" 1. Torre\n",nomePeca1);
-    printf(" 2. Bispo\n",nomePeca2);
-    printf(" 3. Rainha\n"nomePeca3);
+    printf(" 1. Torre\n");
+    printf(" 2. Bispo\n");
+    printf(" 3. Rainha\n");
     printf(" 4. Sair\n");
-    
-    Switch (nomePeca)
+    printf("Opção: ");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
         case 1:
-            while(numCasa<=5){
-            printf("Digite o numero de casas para mover %c à %c.\n",nomePeca1, direita);
-            scanf("%d", &numCasa);
-            numCasa++;
-            printf("Você moveu %d pra a direita\n");
+            // Torre: usando while
+            printf("Você escolheu Torre.\n");
+            printf("Digite a direção (d = direita, e = esquerda, c = cima, b = baixo): ");
+            scanf(" %c", &direcao);
+            numCasa = 1;
+            while (numCasa <= 5) {
+                printf("Movendo Torre %d casas para %c.\n", numCasa, direcao);
+                numCasa++;
             }
-    break;
-    case 2:
-        do{
-            printf("Digite o numero de casas para mover %c à %c.\n",nomePeca2, direita);            
-            scanf("%d", &numCasa);
-            numCasa++;
-        } while(numCasa<=5){
-            printf("Você está movendo %d casas para %c e %c, na diagonal.\n", cima, direita)
+            break;
+        case 2:
+            // Bispo: usando do-while
+            printf("Você escolheu Bispo.\n");
+            printf("Digite a direção diagonal (1 = cima-direita, 2 = cima-esquerda, 3 = baixo-direita, 4 = baixo-esquerda): ");
+            scanf("%d", &i);
+            numCasa = 1;
+            do {
+                printf("Movendo Bispo %d casas na diagonal %d.\n", numCasa, i);
+                numCasa++;
+            } while (numCasa <= 5);
+            break;
+        case 3:
+            // Rainha: usando for
+            printf("Você escolheu Rainha.\n");
+            printf("Digite a direção (d = direita, e = esquerda, c = cima, b = baixo, x = diagonal): ");
+            scanf(" %c", &direcao);
+            for (i = 1; i <= 5; i++) {
+                printf("Movendo Rainha %d casas para %c.\n", i, direcao);
             }
-    break;        
-    case 3:
-            for(numCasa <= 8; nomePeca3 >=0; numCasa -=8){
-            printf("Digite o numero de casas para mover %c à %c.\n",nomePeca3, esquerda);            
-            scanf("%d", &numCasa);
-            }
-    break;
-    default:
-    printf("Saindo do jogo...");            
-            
-        
+            break;
+        default:
+            printf("Saindo do jogo...\n");
+    }
+    return 0;
+}        
     
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.

@@ -8,7 +8,7 @@ int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 int numCasa;
-char nomePeca1, nomePeca2, nomePeca3, direita, cima, esquerda;
+char nomePeca,nomePeca1, nomePeca2, nomePeca3, direita, cima, esquerda;
 
     printf("Digite o número da peça que deseja mover!\n");
     printf(" 1. Torre\n",nomePeca1);
@@ -24,6 +24,7 @@ char nomePeca1, nomePeca2, nomePeca3, direita, cima, esquerda;
             numCasa++;
             printf("Você moveu %d pra a direita\n");
             }
+    break;
     case 2:
         do{
             printf("Digite o numero de casas para mover %c à %c.\n",nomePeca2, direita);            
@@ -32,7 +33,15 @@ char nomePeca1, nomePeca2, nomePeca3, direita, cima, esquerda;
         } while(numCasa<=5){
             printf("Você está movendo %d casas para %c e %c, na diagonal.\n", cima, direita)
             }
+    break;        
     case 3:
+            for(numCasa <= 8; nomePeca3 >=0; numCasa -=8){
+            printf("Digite o numero de casas para mover %c à %c.\n",nomePeca3, esquerda);            
+            scanf("%d", &numCasa);
+            }
+    break;
+    default:
+    printf("Saindo do jogo...");            
             
         
     

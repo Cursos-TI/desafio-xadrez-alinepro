@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-//Recursividade para movmentar a torre
+//Recursividade para movmentar a torre, o bispo e a rainha
 void moverTorre(int numCasa){
-    if (numCasa>0){
+    if (numCasa > 0){
     printf("%d\n", numCasa);
-    moverTorre(numCasa-1);
+    moverTorre(numCasa - 1);
     }
 }
 void moverBispo(int i){
@@ -25,11 +25,7 @@ int main() {
     moverRainha(8)
     int mov = 1;  //movimento do cavalo
 
-// Mover a Torre usando for (em comentário, devido ao uso de recursividade)
-    //for (numCasa = 1; numCasa <= 5; numCasa++) {
-         //printf("Movendo Torre %d casas para direita.\n", numCasa);
-    //}
-            
+          
     // Bispo: usando loop aninhado, mais externo na vertical, mais interno na horizontal
     int n = 1;
         do{
@@ -42,12 +38,6 @@ int main() {
         n++;
         } while (n <= 5);
     
-    // Rainha: usando while
-   // while(j <= 8){
-     //   printf("Movendo Rainha %d casas para a esquerda.\n",j);
-       //     j++; 
-    }
-
        // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical. Uso de loop com continue e break para o cavalo
@@ -60,7 +50,7 @@ int main() {
         }
         printf("Movendo Cavalo para direita\n");
     }
-            printf("Saindo do jogo...\n");
+    printf("Saindo do jogo...\n");
 
     return 0;
 }      

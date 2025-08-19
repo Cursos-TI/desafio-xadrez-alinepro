@@ -1,53 +1,53 @@
 #include <stdio.h>
 
-//Recursividade para movmentar a torre, o bispo e a rainha
-void moverTorre(int numCasa){
-    if (numCasa > 0){
-    printf("%d\n", numCasa);
-    moverTorre(numCasa - 1);
+// Recursividade para movimentar a torre, o bispo e a rainha
+void moverTorre(int numCasa) {
+    if (numCasa > 0) {
+        moverTorre(numCasa - 1);
+        printf("Movendo Torre %d casa(s).\n", numCasa);
+
     }
 }
-void moverBispo(int i){
-    if(i > 0){
-        printf("Movendo Bispo %d casas para cima.\n", i);
+
+void moverBispo(int i) {
+    if (i > 0) {
         moverBispo(i - 1);
+        printf("Movendo Bispo %d casa(s) para direita.\n", i);
+
     }
 }
-void moverRainha(int j){
-    if(j > 0){
-        printf("Movendo Rainha %d casas para a esquerda.\n", j);
+
+void moverRainha(int j) {
+    if (j > 0) {
         moverRainha(j - 1);
+        printf("Movendo Rainha %d casa(s) para a esquerda.\n", j);
+
     }
 }
+
 int main() {
     moverTorre(5);
     moverBispo(5);
-    moverRainha(8)
-          
-// Bispo: usando loop aninhado, mais externo na vertical, mais interno na horizontal
-    int n = 1;
-        do{
-            int m = 1;
-            do{
-                printf("Movendo Bispo %d casas para esquerda.\n", m);
-                m++;
-            }  while (m <= 5);    
-        printf("Movendo Bispo %d casas para cima.\n", n);
-        n++;
-        } while (n <= 5);
-    
- // Loop aninhado de condição multipla para representar a movimentação horizontal e outro vertical. Uso de loop com continue e break para o cavalo
+    moverRainha(8);
 
-    for (int l = 1, mov =1; l <= 2 && mov = 1; l++,mov++){
-        if(l == 1) continue;
-            if(l ==2) break;
-            printf("Movendo Cavalo %d casa(s) para Cima.\n",l);
+    // Bispo: usando loop aninhado, mais externo na vertical, mais interno na horizontal
+    for (int n = 1; n <= 5; n++) {
+        for (int m = 1; m <= 5; m++) {
+            printf("Movendo Bispo %d casa(s) para esquerda.\n", m);
         }
-        printf("Movendo Cavalo para direita\n");
+        printf("Movendo Bispo %d casa(s) para cima.\n", n);
     }
-    printf("Saindo do jogo...\n");
 
-    return 0;
-}      
-   
-    
+    // Loop para representar a movimentação do cavalo
+    for (int l = 1; l <= 2; l++) {
+        if (l == 1) {
+            printf("Movendo Cavalo %d casa(s) para cima.\n", l);
+            printf("Movendo Cavalo para direita\n");
+        }
+        if (l == 2) {
+            printf("Movendo Cavalo %d casa(s) para cima.\n", l);
+            printf("Movendo Cavalo para esquerda\n");
+        }
+    }
+
+    printf("Saindo do jogo...\n");

@@ -23,10 +23,8 @@ int main() {
     moverTorre(5);
     moverBispo(5);
     moverRainha(8)
-    int mov = 1;  //movimento do cavalo
-
           
-    // Bispo: usando loop aninhado, mais externo na vertical, mais interno na horizontal
+// Bispo: usando loop aninhado, mais externo na vertical, mais interno na horizontal
     int n = 1;
         do{
             int m = 1;
@@ -38,12 +36,9 @@ int main() {
         n++;
         } while (n <= 5);
     
-       // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical. Uso de loop com continue e break para o cavalo
+ // Loop aninhado de condição multipla para representar a movimentação horizontal e outro vertical. Uso de loop com continue e break para o cavalo
 
-    while (mov--){
-        for(int l = 1; l <= 2; l++){
+    for (int l = 1, mov =1; l <= 2 && mov = 1; l++,mov++){
         if(l == 1) continue;
             if(l ==2) break;
             printf("Movendo Cavalo %d casa(s) para Cima.\n",l);
@@ -56,10 +51,3 @@ int main() {
 }      
    
     
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
-

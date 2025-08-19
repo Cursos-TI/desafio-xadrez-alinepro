@@ -38,15 +38,17 @@ int main() {
         printf("Movendo Bispo %d casa(s) para cima.\n", n);
     }
 
-    // Loop para representar a movimentação do cavalo
+   // Loop para representar a movimentação do cavalo com continue e break
     for (int l = 1; l <= 2; l++) {
         if (l == 1) {
             printf("Movendo Cavalo %d casa(s) para cima.\n", l);
             printf("Movendo Cavalo para direita\n");
+            continue; // pula para a próxima iteração
         }
         if (l == 2) {
             printf("Movendo Cavalo %d casa(s) para cima.\n", l);
             printf("Movendo Cavalo para esquerda\n");
+            break; // encerra o loop após este movimento
         }
     }
 
